@@ -1,8 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
+import { NavLink,useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
         <nav className='navbar'>
             <img src="" alt="" width="130"/>
@@ -12,7 +11,7 @@ const Navbar = () => {
                 <li><NavLink to="/products">Products</NavLink></li>
                 <li><NavLink to="/contact">Contact</NavLink></li>
             </ul>
-            <button> Get Started </button>
+            <button onClick={() => navigate("/contact")}> Get Started </button>
         </nav>
   )
 }
