@@ -76,7 +76,7 @@ cursor:pointer;
   margin-top: 20px;
 } 
 
-.contact-btn button {
+.contact-btn button,.go-back-btn {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
