@@ -9,6 +9,7 @@ import RootLayout from './layout/RootLayout'
 import ContactLayout from './layout/ContactLayout'
 import ContactInfo from './components/ContactInfo'
 import ContactForm from './components/ContactForm'
+import NotFound from './components/NotFound'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="info" element={<ContactInfo />} />
           <Route path="form" element={<ContactForm />} /> 
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Route>
     )
   )
