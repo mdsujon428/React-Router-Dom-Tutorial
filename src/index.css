@@ -67,3 +67,20 @@ font-size:16px;
 border-radius:30px;
 cursor:pointer;
 }
+
+
+.contact-btn {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+} 
+
+.contact-btn button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  cursor: pointer;
+}

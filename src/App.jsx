@@ -1,14 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import {Route, createBrowserRouter, 
   createRoutesFromElements,RouterProvider} from 'react-router-dom'
-import Navbar from './components/Navbar'
+
 import Home from './pages/Home'
 import About from './pages/About'
 import Products from './pages/Products'
 import Contact from './pages/Contact'
 import RootLayout from './layout/RootLayout' 
+import ContactLayout from './layout/ContactLayout'
+import ContactInfo from './components/ContactInfo'
+import ContactForm from './components/ContactForm'
+
 
 function App() {
   const router = createBrowserRouter(
@@ -17,7 +18,11 @@ function App() {
         <Route index element={<Home />}/>
         <Route path="about" element={<About />} />
         <Route path="products" element={<Products />} />
-        <Route path="contact" element={<Contact />} />
+        <Route path="contact" element={<ContactLayout />} > 
+          <Route index element={<Contact />} />
+          <Route path="info" element={<ContactInfo />} />
+          <Route path="form" element={<ContactForm />} /> 
+        </Route>
       </Route>
     )
   )

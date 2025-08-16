@@ -1,4 +1,4 @@
-import { NavLink,useNavigate } from 'react-router-dom'
+import { NavLink,replace,useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const Navbar = () => {
                 <li><NavLink to="/products">Products</NavLink></li>
                 <li><NavLink to="/contact">Contact</NavLink></li>
             </ul>
-            <button onClick={() => navigate("/contact")}> Get Started </button>
+            <button onClick={() => navigate("/contact", { replace: true })}> Get Started </button>
         </nav>
   )
 }
