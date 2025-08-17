@@ -22,8 +22,16 @@ export default Jobs
 
 export const JobsLoader = async() => {
     const response = await fetch('http://localhost:5000/jobs');
-    const jobs = await response.json();
-    return jobs;
+
+    response.then((res) => {
+        if (!res.ok) {
+            throw new Error('Network response was not ok');
+        }
+    }).then((jobs) => {
+        return jobs;
+    }).catch((error) => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
 }
 
 

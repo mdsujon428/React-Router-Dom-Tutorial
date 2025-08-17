@@ -13,6 +13,7 @@ import ContactInfo from './components/ContactInfo'
 import ContactForm from './components/ContactForm'
 import NotFound from './components/NotFound'
 import JobDetail,{JobDetailLoader} from './components/JobDetail'
+import Error from './components/Error'
 
 
 
@@ -31,7 +32,8 @@ function App() {
         <Route path="jobs" element={<JobsLayout />} >
           {/* Add other routes here */}
           <Route index element={<Jobs/>} loader={JobsLoader} />
-          <Route path=":id" element={<JobDetail />} loader={JobDetailLoader} />
+          <Route path=":id" element={<JobDetail />} 
+          loader={JobDetailLoader} errorElement={<Error />} />
           {/* Catch-all route for 404 Not Found */}
         </Route>
         <Route path="*" element={<NotFound />} />
