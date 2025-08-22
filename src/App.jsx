@@ -14,6 +14,7 @@ import ContactForm from './components/ContactForm'
 import NotFound from './components/NotFound'
 import JobDetail,{JobDetailLoader} from './components/JobDetail'
 import Error from './components/Error'
+import './Api'
 
 
 
