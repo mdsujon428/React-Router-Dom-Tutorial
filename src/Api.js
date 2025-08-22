@@ -1,3 +1,7 @@
+ import axios from "axios";
+ import CryptoJS from "crypto-js";
+ 
+ 
  const CONSUMER_KEY="ck_fd5d8051c53561cfba3d67ca7b866658ab93099c"
  const CONSUMER_SECRET="cs_31f61a15000723517813b8a51569aea4fd17d832"
  const API_URL = "http://clothingbazaar.local/wp-json/wc/v3";
@@ -34,3 +38,25 @@ const generateOAuthSignature = (url, method = 'GET', params = {}) => {
   return { ...oauthParams, oauth_signature: encodeURIComponent(signature) };
 };
 
+const api = axios.create({
+  baseURL: API_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+
+// Function to get all products from WooCommerce Store.
+export const getAllProducts = async () => {
+  try {
+    const url = `${API_URL}/products`;
+    const params = generateOAuthSignature(url);
+    const response = await api.get('products', {
+      params: params
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    throw error;
+  }
+};
