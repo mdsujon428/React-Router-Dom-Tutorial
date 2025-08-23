@@ -1,12 +1,10 @@
  import axios from "axios";
  import CryptoJS from "crypto-js";
- 
- 
- const CONSUMER_KEY="ck_fd5d8051c53561cfba3d67ca7b866658ab93099c"
- const CONSUMER_SECRET="cs_31f61a15000723517813b8a51569aea4fd17d832"
- const API_URL = "http://clothingbazaar.local/wp-json/wc/v3";
 
 
+ const CONSUMER_KEY= import.meta.env.VITE_CONSUMER_KEY
+ const CONSUMER_SECRET= import.meta.env.VITE_CONSUMER_SECRET
+ const API_URL = import.meta.env.VITE_API_URL;
 
 
  // Function to generate OAuth signature
